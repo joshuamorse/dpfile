@@ -6,9 +6,19 @@ $dropbox = '/home/jmo/Dropbox/';
 
 if(isset($argv[1]))
 {
+  if(isset($argv[2]))
+  {
+    $dropbox.= $argv[2];
+  }
+
   $cmd = 'cp -r '.$argv[1].' '.$dropbox; 
+
   if(exec($cmd))
   {
     echo 'Moved '.$argv[1].' to '.$dropbox.'/'.$argv[1]."\n";
   }
+}
+else
+{
+  echo 'I needs a file!'."\n";
 }
