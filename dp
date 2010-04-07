@@ -1,0 +1,14 @@
+#! /usr/bin/php
+
+<?php
+
+$dropbox = '/home/jmo/Dropbox/';
+
+if(isset($argv[1]))
+{
+  $cmd = 'cp -r '.$argv[1].' '.$dropbox; 
+  if(exec($cmd))
+  {
+    echo 'Moved '.$argv[1].' to '.$dropbox.'/'.$argv[1]."\n";
+  }
+}
